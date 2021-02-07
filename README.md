@@ -1,10 +1,14 @@
 # WebRTC_Digest
 
+## Introduction
+
 WebRTC is a massive project with extremely elegant implementation details. W3C recently has officially accepted this as a standard, which is an expected outcome years ago. If you dig deep down into WebRTC's code, not only you will be able to learn about processing/compression/transmission technology of media content (in some usecase scenario, generic data content), but you will also see top-tier C++ code which can be applied in various other projects. 
 
 WebRTC's codebase has been evolving drasticlly in past few years, and seems like worth a good re-reading and digest. In this experimental project, we will try to digest our understanding of WebRTC with its own code structure, in spirit of sharing understanding of the implementation. Hopefully helps other people who are also trying to learn from it.
 
 If you are also into this idea, you can join me in this path, and surely I'll be glad to hear from you guys.
+
+## 简介
 
 WebRTC是一个极其宏大的工程，其中代码与逻辑实现都非常优雅，算得上一个代码宝藏库。W3C最近已经正式把WebRTC接受为一个新标准，这也算是多年的期盼如愿以偿了。如果你深挖WebRTC的代码内容，不仅可以学到完整的媒体数据的处理、压缩、传输算法实现（有些应用场景下还包括通用数据的传输实现），而且你还可以看到非常多高水平的C++代码，这些实践也可以很轻松的迁移到其他的项目中，发挥巨大的作用。
 
