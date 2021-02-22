@@ -1,0 +1,26 @@
+static_library("webrtc-digest-api") {
+    configs += [ 
+            "//:rtc_config",
+    ]
+    
+    sources = [
+        "api.cc",
+        "api.h",
+        "foo.cc",
+        "foo.h",
+        "ref_count_object/ref_count_base.h",
+        "rtc_base/constructor_magic.h",
+        "rtc_base/ref_count.h",
+        "rtc_base/ref_counter.h",
+        "rtc_base/ref_count_base.h",
+    ]
+
+    include_dirs = [
+        ".", 
+        "ref_count_object",
+        "rtc_base",
+        "//third_party",
+    ]
+    deps = []
+    libs = []
+}
