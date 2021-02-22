@@ -1,16 +1,18 @@
-source_set("webrtc-digest-api") {
+source_set("webrtc-digest-rtc-base") {
     configs += [ 
             "//:rtc_config",
     ]
     
     sources = [
-        "ref_counted_base.h",
-        "scoped_refptr.h",
+        "constructor_magic.h",
+        "ref_count.h",
+        "ref_counter.h",
+        "ref_counted_object.h",
     ]
 
     include_dirs = [
         ".", 
-        "rtc_base",
+        "//rtc_base",
         "//third_party",
     ]
     deps = []

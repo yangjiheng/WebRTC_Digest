@@ -1,9 +1,9 @@
 #ifndef FOO_H_
 #define FOO_H_
 
-#include "ref_count_base.h"
+#include "ref_counted_base.h"
 #include "scoped_refptr.h"
-#include "ref_count_object.h"
+#include "ref_counted_object.h"
 
 class Foo : public rtc::RefCountedBase {
     public:

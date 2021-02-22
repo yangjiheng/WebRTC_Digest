@@ -1,7 +1,7 @@
 #ifndef _API_API_H_
 #define _API_API_H_
 
-#include "ref_count_base.h"
+#include "ref_counted_base.h"
 #include "scoped_refptr.h"
 
 class Foo;

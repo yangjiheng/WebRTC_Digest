@@ -1,6 +1,7 @@
 
 group("webrtc-digest"){
     deps = [
+        "//rtc_base:webrtc-digest-rtc-base",
         "//api:webrtc-digest-api",
         "//app:webrtc-digest",
     ]
