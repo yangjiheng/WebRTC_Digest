@@ -62,10 +62,10 @@ WebRTC团队曾经强调过是不会使用std::shared_ptr的（是的，C++标�
 
 ## Demo Code
 
-Scoped_refptr的实现：[scoped_refptr.h](api/scoped_refptr.h)
-WebRTC中，一个Ref Counted Base的实现: [ref_counted_base.h](api/ref_counted_base.h)
-WebRTC中，一个Ref Counted Object的实现: [ref_counted_object.h](rtc_base/ref_counted_object.h)
-Demo: [main.cc](app/main.cc)
+* Scoped_refptr的实现：[scoped_refptr.h](api/scoped_refptr.h)
+* WebRTC中，一个Ref Counted Base的实现: [ref_counted_base.h](api/ref_counted_base.h)
+* WebRTC中，一个Ref Counted Object的实现: [ref_counted_object.h](rtc_base/ref_counted_object.h)
+* Demo: [main.cc](app/main.cc)
 
 ## 编译方法：
 
