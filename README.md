@@ -1,4 +1,4 @@
-# WebRTC_Digest
+# WebRTC Digest
 
 [WebRTC](https://webrtc.org/)是一个极其宏大的工程，其中代码与逻辑实现都非常优雅，算得上一个代码宝藏库。W3C和IETF最近已经正式把WebRTC接受为一个[新标准](https://www.w3.org/TR/webrtc/), 这也算是多年的期盼如愿以偿了。如果你深挖WebRTC的代码内容，不仅可以学到完整的媒体数据的处理、压缩、传输算法实现（有些应用场景下还包括通用数据的传输实现），而且你还可以看到非常多高水平的C++代码，这些实践也可以很轻松的迁移到其他的项目中，发挥巨大的作用。
 
@@ -7,4 +7,4 @@ WebRTC的代码在近些年相比前些年已经变化非常大了，代码提�
 如果你们也喜欢这个主意，你也可以选择与我们同行，我们非常期待听到你们的声音。
 
   * api
-    * scoped_refptr
+    * [scoped_refptr](api/scoped_refptr/README.md)
