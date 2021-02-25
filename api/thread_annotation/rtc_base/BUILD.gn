@@ -1,0 +1,17 @@
+source_set("webrtc-digest-rtc-base") {
+    configs += [ 
+            "//:rtc_config",
+    ]
+    
+    sources = [
+        "thread_annoatation.h",
+    ]
+
+    include_dirs = [
+        ".", 
+        "//rtc_base",
+        "//third_party",
+    ]
+    deps = []
+    libs = []
+}
