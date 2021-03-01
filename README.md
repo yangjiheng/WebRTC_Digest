@@ -10,4 +10,7 @@ WebRTC的代码在近些年相比前些年已经变化非常大了，项目非�
     * [scoped_refptr背后的故事](api/scoped_refptr/README.md)
   * rtc_base
     * [thread_annotations的来源](rtc_base/thread_annotation/README.md)
+    * synchronization
+      * [mutex的实现，包括safe_compare，yield的演化](rtc_base/synchronization/mutex/README.md)
+
 

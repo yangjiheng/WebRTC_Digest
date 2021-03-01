@@ -1,0 +1,37 @@
+source_set("webrtc-digest-rtc-base") {
+    configs += [ 
+            "//:rtc_config",
+    ]
+    
+    sources = [
+        "thread_annoatation.h",
+        "checks.h",
+        "checks.cc",
+        "system/unused.h",
+        "system/inline.h",
+        "type_traits.h",
+        "synchronization/yield.h",
+        "synchronization/yield.cc",
+        "synchronization/mutex.h",
+        "synchronization/mutex.cc",
+    ]
+
+    if(is_win) {
+        sources += [
+            "synchronization/mutex_critical_section.h",
+        ]
+    }
+    else if(is_mac) {
+        sources += [
+            "synchronization/mutex_pthread.h",
+        ]
+    }
+
+    include_dirs = [
+        ".", 
+        "//rtc_base",
+        "//third_party",
+    ]
+    deps = []
+    libs = []
+}

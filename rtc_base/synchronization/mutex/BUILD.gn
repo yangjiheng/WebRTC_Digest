@@ -1,0 +1,43 @@
+
+group("webrtc-digest"){
+    deps = [
+        "//rtc_base:webrtc-digest-rtc-base",
+        "//app:webrtc-digest",
+    ]
+}
+
+config("rtc_config") {
+    cflags_cc = ["-Wno-poison-system-directories"]
+    include_dirs = [
+        "//",
+        "//rtc_base",
+        "//../../../third_party",
+    ]
+
+    defines = []
+    ldflags = []
+
+    if (is_win) {
+        defines += [
+            "WEBRTC_WIN",
+        ]
+        cflags_cc += ["/W3", "/EHsc"]
+        if (is_debug) {
+            cflags_cc += ["/MTd"]
+            cflags = [ "/Zi" ]
+        } else {
+            cflags_cc += ["/MT"]
+        }
+    }
+    else if(is_mac) {
+        defines += [
+            "WEBRTC_MAC",
+            "WEBRTC_POSIX",
+        ]
+
+        ldflags += [
+          "-lpthread",
+          "-lm",
+        ]
+    }
+}
