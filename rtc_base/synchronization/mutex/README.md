@@ -1,4 +1,4 @@
-# Mutex
+# Mutex的周边实现
 
 ## WebRTC的yield方法
 
@@ -30,7 +30,16 @@ POSIX环境里有sched_yield()方法，它也会比Sleep更智能在：
 
 ## WebRTC的Mutex
 
-[TODO]
+WebRTC的mutex最早是CriticalSection跟Pthread Mutex的混合版本，不过都是用的reentrant mutex（entrant mutex是指同线程多次获得锁是可以的，但不同线程获得锁是不可以的，non-reentrant mutex是同线程不同线程都不可以重复获得锁，除非锁处于空闲状态）。这个方案在2020年6月份被认为有瑕疵的，升级为现在的混合版本：
+
+* 如果启用了abseil的mutex，则使用absl::Mutex
+* 如果是Windows环境的话，使用Critical Section（仍不安全，因为Critical Section是reentrant mutex，估计以后会往abseil::Mutex上转）
+* 如果是POSIX环境的话，使用pthread，但是不启用recursive lock
+* 其他环境不支持
+
+关于C++代码里使用reentrant mutex是不是个好主意，一直是个极具争议的问题。它合理吗？合理的。同一个线程为什么不能持续访问同一个锁保护的内容。这个从本质上讲没问题。但是reentrant mutex可控吗？未必，因为没办法工程师视角和工程视角是完全不同的，太容易出bug了，维护成本高，性价比低，而且这些bug往往也是代码review和设计时无法完全避免的，并且大幅度提升代码间依赖性。有一个比较经典的论述可以参考Stephen Cleary的[blog](https://blog.stephencleary.com/2013/04/recursive-re-entrant-locks.html)，合情合理。
+
+在去掉pthread的recursive mutex后，webrtc的test case出现了比较多的deadlock，也是在复杂线程模型下，mutex保护容易出问题的印证。所以在把握没那么大的情况下，尽可能多使用non-reentrant mutex是个明智的选择，会有效降低代码的风险。
 
 ## Demo Code
 
