@@ -1,6 +1,7 @@
 #include <iostream>
 #include "api.h"
 #include "numerics/safe_compare.h"
+#include "synchronization/mutex.h"
 
 using namespace std;
 
@@ -19,7 +20,13 @@ int main(int argc, char**argv) {
         std::cout << "num1 is smaller than num2" << std::endl;
     }
 
-    
+    {
+        webrtc::Mutex testMutex;
+        webrtc::MutexLock testLock(&testMutex);
+        {
+            std::cout << "Within lock" << std::endl;
+        }
+    }
 
     return 0;
 }

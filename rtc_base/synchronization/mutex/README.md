@@ -41,6 +41,8 @@ WebRTC的mutex最早是CriticalSection跟Pthread Mutex的混合版本，不过�
 
 在去掉pthread的recursive mutex后，webrtc的test case出现了比较多的deadlock，也是在复杂线程模型下，mutex保护容易出问题的印证。所以在把握没那么大的情况下，尽可能多使用non-reentrant mutex是个明智的选择，会有效降低代码的风险。
 
+目前WebRTC提供两种锁，一种是webrtc::MutexLock，用在一个scope里的互斥锁场景，使用上述的mutex实现进行互斥，另一种是webrtc::GlobalMutexLock，用在一些全局锁场景，使用std::atomic<int>确保互斥，比较清晰。
+
 ## Demo Code
 
 * yield的实现 [yield.cc](rtc_base/synchronization/yield.cc)
