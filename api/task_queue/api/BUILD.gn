@@ -1,0 +1,16 @@
+source_set("webrtc-digest-api") {
+    configs += [ 
+            "//:rtc_config",
+    ]
+    
+    sources = [
+        "task_queue/queued_task.h",
+    ]
+
+    include_dirs = [
+        ".", 
+        "//third_party",
+    ]
+    deps = []
+    libs = []
+}

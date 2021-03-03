@@ -1,0 +1,27 @@
+source_set("webrtc-digest-rtc-base") {
+    configs += [ 
+            "//:rtc_config",
+    ]
+    
+    sources = [
+        "synchronization/yield_policy.h",
+        "synchronization/yield_policy.cc",
+        "checks.h",
+        "checks.cc",
+        "system/inline.h",
+        "system/rtc_export.h",
+        "system/warn_current_thread_is_deadlocked.h",
+        "event.h",
+        "event.cc",
+        "type_traits.h",
+        "numerics/safe_compare.h",
+    ]
+
+    include_dirs = [
+        ".", 
+        "//rtc_base",
+        "//third_party",
+    ]
+    deps = []
+    libs = []
+}

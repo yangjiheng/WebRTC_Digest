@@ -1,0 +1,21 @@
+executable("webrtc-digest") {
+    configs += [ 
+            "//:rtc_config",
+    ]
+    
+    sources = [
+        "main.cc",
+    ]
+
+    include_dirs = [
+        ".", 
+        "//api",
+        "//rtc_base",
+    ]
+    deps = [
+        "//api:webrtc-digest-api",
+        "//rtc_base:webrtc-digest-rtc-base",
+    ]
+
+    libs = []
+}
